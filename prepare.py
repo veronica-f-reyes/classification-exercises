@@ -2,7 +2,7 @@ import pandas as pd
 import acquire 
 
 
-def prep_iris(df):
+def prep_iris():
 
     df_iris = acquire.get_iris_data()
     
@@ -13,3 +13,4 @@ def prep_iris(df):
     df_dummy = pd.get_dummies(df_iris[['species']])
     
     return pd.concat([df_iris, df_dummy], axis = 1)
+
