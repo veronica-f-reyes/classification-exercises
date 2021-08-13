@@ -56,7 +56,18 @@ def get_iris_data():
     
         database = 'iris_db'
 
-        query = "SELECT * FROM species;"
+        query = """
+                SELECT 
+                    measurement_id,
+                    species_id,
+                    species_name,
+                    sepal_length,
+                    sepal_width,
+                    petal_length,
+                    petal_width
+                FROM measurements
+                JOIN species USING(species_id)
+                """
 
         # read the SQL query into a dataframe
         df = pd.read_sql(query, get_db_url(host,user, password, 'iris_db'))
