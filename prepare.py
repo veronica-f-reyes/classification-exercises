@@ -6,7 +6,7 @@ def prep_iris():
 
     df_iris = acquire.get_iris_data()
     
-    df_iris = df_iris.drop(columns = ['species_id', 'measurement_id', 'Unnamed: 0'])
+    df_iris = df_iris.drop(columns = ['measurement_id', 'Unnamed: 0'])
     
     df_iris = df_iris.rename(columns={"species_name": "species"})
     
